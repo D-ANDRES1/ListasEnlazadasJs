@@ -100,9 +100,26 @@ class SinglyLinkedList {
   }
 
   removeDuplicates() {
-    throw new Error(
-      "TODO RETO: Implementar removeDuplicates() en SinglyLinkedList."
-    );
+    if(this.head === null || this.head.next === null) return;
+
+    const seen = new Set();
+    let prev = this.head
+    let current = this.head.next;
+    
+    seen.add(prev.value);
+    while(current !== null){
+
+      if(seen.has(current.value)){
+        prev.next = current.next
+        current = current.next;
+      }else {
+        seen.add(current.value);
+        prev = current
+        current = current.next;
+      }
+    }
+    this.tail = prev;
+    return 
   }
 
   size() {
