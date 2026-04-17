@@ -69,7 +69,14 @@ class SinglyLinkedList {
   }
 
   clean() {
-    throw new Error("TODO RETO: Implementar clean() en SinglyLinkedList.");
+
+    let removeCounter = this._size;
+
+    this.head = null;
+    this.tail = null;
+    this._size = 0;
+
+    return removeCounter;
   }
 
   reverseInPlace() {
