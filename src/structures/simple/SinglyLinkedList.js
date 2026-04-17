@@ -54,9 +54,18 @@ class SinglyLinkedList {
   }
 
   countOccurrences(value) {
-    throw new Error(
-      "TODO RETO: Implementar countOccurrences(value) en SinglyLinkedList."
-    );
+
+    let current = this.head;
+    let counter = 0;
+
+    while(current != null) {
+      if(this._isSameValue(current.value,value)){
+        counter ++;
+      }
+      current = current.next;
+    }
+    return counter;
+
   }
 
   clean() {
