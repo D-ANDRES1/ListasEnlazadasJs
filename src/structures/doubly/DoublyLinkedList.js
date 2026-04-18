@@ -125,7 +125,7 @@ class DoublyLinkedList {
 
     let current = this.head.next;
     let prev = this.head;
-    seen.add(prev);
+    seen.add(prev.value);
 
     while(current !== null){
       if(seen.has(current.value)){
