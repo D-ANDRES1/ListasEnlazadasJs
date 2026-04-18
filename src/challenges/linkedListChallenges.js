@@ -52,6 +52,10 @@ function runDoublyChallenges() {
   runChallenge("countOccurrences('v2') esperado=2", () =>
     list.countOccurrences("v2")
   );
+  runChallenge("removeDuplicates()", () => {
+    list.removeDuplicates();
+    return list.toForwardString();
+  });
   runChallenge("clean() esperado=5", () => list.clean());
 
   list.addLast(10);
@@ -62,7 +66,7 @@ function runDoublyChallenges() {
     list.reverseInPlace();
     return list.toForwardString();
   });
-  runChallenge("removeDuplicates()", () => list.removeDuplicates());
+  
 }
 
 function runChallenge(title, action) {

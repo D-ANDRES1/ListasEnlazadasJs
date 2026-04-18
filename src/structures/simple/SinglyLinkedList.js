@@ -112,6 +112,7 @@ class SinglyLinkedList {
       if(seen.has(current.value)){
         prev.next = current.next
         current = current.next;
+        this._size --;
       }else {
         seen.add(current.value);
         prev = current
